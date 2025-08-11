@@ -79,7 +79,7 @@ This system efficiently schedules and executes tasks at precise times without ov
 
 ## **System Workflow**
 
-![Scheduler Flowchart](scheduler_flowchart.png)
+![Scheduler Flowchart](./scheduler_flowchart.png)
 
 ---
 
