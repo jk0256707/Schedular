@@ -90,7 +90,8 @@ This system efficiently schedules and executes tasks at precise times without ov
 * Docker & Docker Compose
 
 ### **Setup**
-
+* Download the project 
+* Go to schedular
 ```sh
 docker-compose up --build
 ```
