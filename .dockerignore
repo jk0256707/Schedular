@@ -1,0 +1,32 @@
+venv/
+lib/
+lib64/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.env
+*.egg-info/
+build/
+dist/
+.eggs/
+*.log
+*.pot
+*.mo
+*.swp
+.DS_Store
+.idea/
+.vscode/
+*.bak
+*.tmp
+
+# Ignore test and coverage output
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
