@@ -1,5 +1,15 @@
 version: '3.8'
 services:
+  monitor:
+    build: .
+    command: python monitor_and_scale.py
+    depends_on:
+      - redis
+      - celery
+    environment:
+      - REDIS_HOST=redis
+    restart: unless-stopped
+    
   db:
     image: postgres:16
     environment:
