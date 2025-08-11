@@ -1,0 +1,10 @@
+# Ignore virtual environments and site-packages
+env/
+venv/
+ENV/
+Lib/
+lib/
+lib64/
+*.egg-info/
+*.pyc
+__pycache__/

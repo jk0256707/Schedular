@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Django Server",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\activate; python manage.py runserver",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Celery Worker",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\activate; celery -A scheduler worker -l info",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Celery Beat",
+      "type": "shell",
+      "command": ".\\venv\\Scripts\\activate; celery -A scheduler beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

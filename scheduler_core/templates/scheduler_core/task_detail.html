@@ -1,0 +1,38 @@
+{% extends 'scheduler_core/base.html' %}
+
+{% load time_extras %}
+{% block title %}Task Detail{% endblock %}
+{% block content %}
+<h2>Task: {{ task.name }}</h2>
+
+<h3>Scheduled Runs</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Command</th>
+            <th>Scheduled Time</th>
+            <th>Status</th>
+            <th>Time Remaining</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% if task %}
+        <tr>
+            <td>{{ task.command }}</td>
+            <td>{{ task.scheduled_time }}</td>
+            <td>{{ task.status }}</td>
+            <td>
+                {% if task.scheduled_time > now %}
+                    {{ task.scheduled_time|time_diff }}
+                {% else %}
+                    Executed
+                {% endif %}
+            </td>
+        </tr>
+    {% else %}
+        <tr><td colspan="4">No scheduled runs.</td></tr>
+    {% endif %}
+    </tbody>
+</table>
+<a href="/dashboard/" class="btn btn-secondary">Back to Dashboard</a>
+{% endblock %}
