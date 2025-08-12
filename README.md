@@ -115,10 +115,43 @@ docker-compose up --build
 
 All environment variables are defined in `docker-compose.yml`.
 
+
+## API & Web Endpoints
+
+### User Registration
+- **POST** `/register/`
+  - Registers a new user.
+  - Body: `{ "username": "yourname", "password": "yourpass", "email": "your@email.com" }`
+
+### User Login
+- **POST** `/login/`
+  - Logs in a user (returns token for API, or session for web).
+  - Body: `{ "username": "yourname", "password": "yourpass" }`
+
+### Dashboard (Web)
+- **GET** `/dashboard/`
+  - Shows your scheduled tasks (web page).
+
+### Task Management (Web)
+- **GET** `/task/create/` — Create a new task (form)
+- **POST** `/task/create/` — Submit new task
+- **GET** `/task/<id>/` — View task details
+- **GET** `/task/<id>/update/` — Update a task (form)
+- **POST** `/task/<id>/update/` — Submit task update
+- **GET** `/task/<id>/delete/` — Delete a task (form)
+- **POST** `/task/<id>/delete/` — Confirm delete
+
+### API Endpoints (for programmatic access)
+- **POST** `/api/register/` — Register user (API)
+- **POST** `/api/login/` — Login (returns token)
+- **GET/POST** `/api/tasks/` — List or create tasks (API, token required)
+- **GET/PUT/DELETE** `/api/tasks/<id>/` — Retrieve, update, or delete a task (API, token required)
+
+> For API endpoints, include your token in the `Authorization: Token <token>` header.
+
 ---
 
 ## **License**
 
 MIT License
-
 ---
